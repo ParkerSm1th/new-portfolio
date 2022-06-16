@@ -1,38 +1,450 @@
-.App {
+html {
+  background-color: #ef1d64;
+}
+
+body {
+  background-color: #171717;
+  min-height: calc(100vh - 2px);
+  margin-top: 2px;
+  padding-bottom: 20px;
+}
+
+p {
+  color: #fff;
+}
+
+.mainContainer, .modal-dialog {
+  width: 91.666667%;
+  margin: auto;
+}
+
+@media (min-width: 640px) {
+  .mainContainer {
+    width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .mainContainer {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticker {
+    margin-left: -28px;
+    float: unset !important;
+  }
+
+  .spotify {
+    display: none !important;
+  }
+
+  .stickerDiv {
+    float: unset !important;
+  }
+}
+
+
+
+.stickerDiv {
+  height: 160px;
+  width: 100%;
   text-align: center;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hide {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.show {
+  display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.spotify {
+  width: 75%;
+  margin: auto;
+  max-width: 200px;
+  margin-top: -15px;
 }
 
-.App-link {
-  color: #61dafb;
+.spotify h1 {
+  color: rgba(245,245,245,1);
+  font-size: 15px;
+  font-family: 'SF UI Text Medium';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spotify h2 {
+  color: #646464;
+  font-size: 14px;
+  font-family: 'SF UI Text Regular';
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: -6px;
+}
+
+.songBar {
+  background: rgb(86 84 84);
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.progressBar {
+  background: rgb(138 135 135);
+  width: 0%;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 900ms ease;
+}
+
+.navButton {
+  padding: 8px 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  width: fit-content;
+  float: right;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navBar {
+  padding-top: 17px;
+}
+
+.logoContainer {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: auto;
+  margin-top: -5px;
+  background: transparent;
+  border-radius: 100%;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  margin-left: -13px;
+}
+
+@keyframes spin {
+  from {transform: translate(-50%, -50%) rotate(0);}
+  to   {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.rotatingBorder {
+  border: 1px dashed #ef1d64;
+  height: 38px;
+  width: 38px;
+  position: absolute;
+  border-radius: 100%;
+  margin-top: 14px;
+  margin-left: 14px;
+  animation: spin 12s linear infinite;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.logoContainer:hover > .rotatingBorder {
+  opacity: 1;
+  height: 54px;
+  width: 54px;
+}
+
+.logoContainer img {
+  height: 30px;
+  width: 30px;
+  transition: all 200ms ease-in-out;
+}
+
+.logoContainer:hover {
+  background: #ef1d640a;
+}
+
+.logoContainer:hover img {
+  transform: scale(0.9);
+}
+
+.commandPallete {
+  background: rgb(23, 23, 23);
+}
+
+.modal-dialog {
+  margin: 3.75rem auto !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.modal-content {
+  background: rgb(23, 23, 23);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.375rem;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  max-height: 61vh;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  transition: all 200ms ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding-left: 13px;
+}
+
+.searchInput::placeholder {
+  color: #3D3D3D;
+  padding-left: -3px;
+}
+
+*:focus, *:focus-visible {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+ul { 
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.navItems {
+  padding: 5px 10px;
+  padding-top: 15px;
+  overflow: scroll;
+}
+
+.typeDivider p {
+  color: #718096;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.typeDivider {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.typeDivider:first-child {
+  margin-top: 0px;
+}
+
+li.navItem {
+  font-size: 16px;
+  padding: 10px;
+  color: #ffffffc4;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+}
+
+.active .navItem {
+  background: #202020;
+}
+
+li.navItem:hover {
+  background: #202020;
+}
+
+.moveTextRight {
+  padding-left: 15px;
+}
+
+.homePageContainer {
+  margin-top: 80px;
+}
+
+.sticker {
+  height: 200px;
+  margin-top: -40px;
+}
+
+.homeBig h1 {
+  font-family: 'SF UI Display Bold';
+  color: rgba(229,229,229,1);
+  font-size: 31px;
+}
+
+.homeBig h2 {
+  font-family: 'SF UI Display Bold';
+  color: rgba(229,229,229,1);
+  font-size: 28px;
+}
+
+.homeBig p {
+  color: rgba(115,115,115,1);
+  font-family: 'SF UI Text Medium';
+}
+
+a.skillLink {
+  color: rgba(115,115,115,1);
+  border-bottom: 2px solid rgb(86 84 84);
+  padding-bottom: 0px;
+  border-radius: 1px;
+}
+
+a.skillLink:hover {
+  border-color: rgba(115,115,115,1);
+}
+
+.discordIcon {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.offline {
+  background: rgba(115,115,115,1) !important;
+}
+
+.online {
+  background: rgb(9, 177, 23) !important;
+}
+
+
+.discordStatusText {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.discordStatusText p {
+  margin-top: 16px;
+}
+
+.discordStatus {
+  margin-top: -18px;
+  position: relative;
+}
+
+.homeJumbo {
+  margin-bottom: 40px;
+}
+
+.homeSeparator {
+  margin-bottom: 10px;
+  margin-top: 60px;
+  color: #404040;
+  font-size: 20px;
+  font-family: 'SF UI Text Medium';
+}
+
+.homeItem {
+  padding: 18px;
+  margin: 3px auto;
+  border-radius: 6px;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  margin-left: -18px;
+  overflow: hidden;
+}
+
+.homeItem h1 {
+  color: rgba(245,245,245,1);
+  font-size: 17px;
+  font-family: 'SF UI Text Medium';
+}
+
+.homeItem p {
+  color: #646464;
+  font-size: 15px;
+  font-family: 'SF UI Text Regular';
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.homeItem:hover {
+  background: rgb(57 57 57 / 10%);
+}
+
+.discordHider {
+  background: #363636;
+  border-radius: 5px;
+  height: 25px;
+  width: 220px;
+  position: absolute;
+  top: 15px;
+  left: -3px;
+}
+.discordShown {
+  display: none;
+}
+
+.homeItem.project img {
+  height: 35px;
+  float: right;
+  border-radius: 100%;
+}
+
+.homeItem.experience p.timing {
+  float: right;
+  font-size: 16px;
+}
+
+.homeItem.experience {
+  padding: 8px 18px;
+}
+
+.homeItem.experience p {
+  margin-top: -5px;
+  padding-bottom: 0px;
+}
+
+.pageTitle {
+  margin-top: 30px;
+}
+
+.pageTitle h1 {
+  color: rgba(212,212,212,1);
+  font-size: 33px;
+  font-family: 'SF UI Display Bold';
+}
+
+.pageTitle h2 {
+  font-size: 17px;
+  color: #ffffff3b;
+  font-family: 'SF UI Text Regular';
+} 
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
 }
