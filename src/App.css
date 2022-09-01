@@ -13,7 +13,8 @@ p {
   color: #fff;
 }
 
-.mainContainer, .modal-dialog {
+.mainContainer,
+.modal-dialog {
   width: 91.666667%;
   margin: auto;
 }
@@ -45,8 +46,6 @@ p {
   }
 }
 
-
-
 .stickerDiv {
   height: 160px;
   width: 100%;
@@ -70,15 +69,15 @@ p {
 }
 
 .spotify h1 {
-  color: rgba(245,245,245,1);
+  color: rgba(245, 245, 245, 1);
   font-size: 15px;
-  font-family: 'SF UI Text Medium';
+  font-family: "SF UI Text Medium";
 }
 
 .spotify h2 {
   color: #646464;
   font-size: 14px;
-  font-family: 'SF UI Text Regular';
+  font-family: "SF UI Text Regular";
   padding-bottom: 0px;
   margin-bottom: 0px;
   margin-top: -6px;
@@ -135,8 +134,12 @@ p {
 }
 
 @keyframes spin {
-  from {transform: translate(-50%, -50%) rotate(0);}
-  to   {transform: translate(-50%, -50%) rotate(360deg);}
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .rotatingBorder {
@@ -207,18 +210,19 @@ a {
 }
 
 .searchInput::placeholder {
-  color: #3D3D3D;
+  color: #3d3d3d;
   padding-left: -3px;
 }
 
-*:focus, *:focus-visible {
+*:focus,
+*:focus-visible {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
 }
 
-ul { 
+ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -277,31 +281,31 @@ li.navItem:hover {
 }
 
 .homeBig h1 {
-  font-family: 'SF UI Display Bold';
-  color: rgba(229,229,229,1);
+  font-family: "SF UI Display Bold";
+  color: rgba(229, 229, 229, 1);
   font-size: 31px;
 }
 
 .homeBig h2 {
-  font-family: 'SF UI Display Bold';
-  color: rgba(229,229,229,1);
+  font-family: "SF UI Display Bold";
+  color: rgba(229, 229, 229, 1);
   font-size: 28px;
 }
 
 .homeBig p {
-  color: rgba(115,115,115,1);
-  font-family: 'SF UI Text Medium';
+  color: rgba(115, 115, 115, 1);
+  font-family: "SF UI Text Medium";
 }
 
 a.skillLink {
-  color: rgba(115,115,115,1);
+  color: rgba(115, 115, 115, 1);
   border-bottom: 2px solid rgb(86 84 84);
   padding-bottom: 0px;
   border-radius: 1px;
 }
 
 a.skillLink:hover {
-  border-color: rgba(115,115,115,1);
+  border-color: rgba(115, 115, 115, 1);
 }
 
 .discordIcon {
@@ -315,13 +319,12 @@ a.skillLink:hover {
 }
 
 .offline {
-  background: rgba(115,115,115,1) !important;
+  background: rgba(115, 115, 115, 1) !important;
 }
 
 .online {
   background: rgb(9, 177, 23) !important;
 }
-
 
 .discordStatusText {
   display: inline-block;
@@ -347,7 +350,7 @@ a.skillLink:hover {
   margin-top: 60px;
   color: #404040;
   font-size: 20px;
-  font-family: 'SF UI Text Medium';
+  font-family: "SF UI Text Medium";
 }
 
 .homeItem {
@@ -361,15 +364,15 @@ a.skillLink:hover {
 }
 
 .homeItem h1 {
-  color: rgba(245,245,245,1);
+  color: rgba(245, 245, 245, 1);
   font-size: 17px;
-  font-family: 'SF UI Text Medium';
+  font-family: "SF UI Text Medium";
 }
 
 .homeItem p {
   color: #646464;
   font-size: 15px;
-  font-family: 'SF UI Text Regular';
+  font-family: "SF UI Text Regular";
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
@@ -413,19 +416,35 @@ a.skillLink:hover {
 
 .pageTitle {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .pageTitle h1 {
-  color: rgba(212,212,212,1);
+  color: rgba(212, 212, 212, 1);
   font-size: 33px;
-  font-family: 'SF UI Display Bold';
+  font-family: "SF UI Display Bold";
 }
 
 .pageTitle h2 {
   font-size: 17px;
   color: #ffffff3b;
-  font-family: 'SF UI Text Regular';
-} 
+  font-family: "SF UI Text Regular";
+}
+
+.pageTitle h4 {
+  position: absolute;
+  top: 29px;
+  margin-left: 40px;
+  font-size: 15px;
+  color: #ffffffb3;
+  font-family: "SF UI Text Bold";
+}
+
+.pageContent h2 {
+  font-size: 17px;
+  color: #ffffff78;
+  font-family: "SF UI Text Regular";
+}
 
 .fade-enter {
   opacity: 0;
@@ -447,4 +466,56 @@ a.skillLink:hover {
   transform: translate(0, 30px);
 
   transition: opacity 250ms ease-out, transform 300ms ease;
+}
+
+.projectImg {
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.repoStats {
+  color: #646464;
+  margin-top: 15px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 15px;
+  width: 95%;
+}
+
+.repoLink {
+  color: #4b4b4b !important;
+  font-size: 15px !important;
+}
+
+.repoItem {
+  min-height: 180px;
+  position: relative;
+}
+
+.repoItem p {
+  font-size: 16px !important;
+}
+
+.repoLinkReal {
+  color: #cccccc !important;
+  font-size: 15px !important;
+  text-transform: lowercase;
+}
+
+.fa-brands {
+  font-size: 18px;
+}
+
+.fa-square-js {
+  color: #efd81d;
+}
+
+.fa-java {
+  color: #dc3545;
 }
