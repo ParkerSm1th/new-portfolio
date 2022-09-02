@@ -9,6 +9,7 @@ import RepoItem from "../components/RepoItem";
 export function Repos() {
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
+  const fakeList = [1, 2, 3, 4, 6, 7, 8];
 
   const getRepoInfo = () => {
     axios
@@ -37,11 +38,15 @@ export function Repos() {
       </div>
       <div>
         {loading ? (
-          <Row className="homeJumbo">
-            <Col xs={12} md={6}>
-              <RepoItem type="loader" />
-            </Col>
-          </Row>
+          <div>
+            <Row className="homeJumbo">
+              {fakeList.map((item) => (
+                <Col xs={12} md={6}>
+                  <RepoItem type="loader" />
+                </Col>
+              ))}
+            </Row>
+          </div>
         ) : (
           <div className="repoList">
             <Row className="homeJumbo">
