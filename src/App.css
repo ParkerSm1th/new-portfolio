@@ -479,6 +479,11 @@ a.skillLink:hover {
   text-align: right;
 }
 
+.textAlignRight p {
+  text-align: right;
+  float: right;
+}
+
 .repoStats {
   color: #646464;
   margin-top: 15px;
@@ -518,4 +523,21 @@ a.skillLink:hover {
 
 .fa-java {
   color: #dc3545;
+}
+
+.loader {
+  color: #fff;
+  font-size: 30px;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.loadingFill {
+  background: #1c1c1c;
+  border-radius: 5px;
+  width: fit-content;
+  color: transparent !important;
+  font-size: 11px !important;
+  margin-top: 4px;
 }

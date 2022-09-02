@@ -52,6 +52,30 @@ export default function RepoItem(props) {
           </div>
         </a>
       );
+    case "loader":
+      return (
+        <a href={props.link} target="_blank" rel="noreferrer">
+          <div className="homeItem repoItem">
+            <h1 className="repoLink loadingFill">parkersm1th/gitHubLink</h1>
+            <p className="loadingFill">Long long long fake description</p>
+            <p className="loadingFill">Shorter area here</p>
+            <Row className="repoStats">
+              <Col xs={8}>
+                <p className="loadingFill">Language:</p>
+              </Col>
+              <Col className="textAlignRight" xs={4}>
+                <p className="loadingFill">123</p>
+              </Col>
+              <Col xs={8}>
+                <p className="loadingFill">License:</p>
+              </Col>
+              <Col className="textAlignRight" xs={4}>
+                <p className="loadingFill">123</p>
+              </Col>
+            </Row>
+          </div>
+        </a>
+      );
     default:
       return <></>;
   }

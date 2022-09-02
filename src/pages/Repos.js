@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Tooltip, OverlayTrigger } from "react-bootstrap";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components
 import RepoItem from "../components/RepoItem";
@@ -36,7 +37,11 @@ export function Repos() {
       </div>
       <div>
         {loading ? (
-          <h2>Loading...</h2>
+          <Row className="homeJumbo">
+            <Col xs={12} md={6}>
+              <RepoItem type="loader" />
+            </Col>
+          </Row>
         ) : (
           <div className="repoList">
             <Row className="homeJumbo">
