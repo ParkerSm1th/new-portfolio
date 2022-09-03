@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useDisclosure } from "react";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route, NavLink, Link, useNavigate } from "react-router-dom";
 import { Flex, Spacer, Box, Grid } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,7 +16,74 @@ export default function NavDialog() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const navigate = useNavigate();
+  const handleShow = () => {
+    setShow(true);
+    setPages(pageDefaults);
+  };
+
+  const pageDefaults = [
+    {
+      name: "Pages",
+      type: "divider",
+    },
+    {
+      name: "Home",
+      link: "/",
+      type: "page",
+    },
+    {
+      name: "About",
+      link: "/about",
+      type: "page",
+    },
+    {
+      name: "Repositories",
+      link: "/repos",
+      type: "page",
+    },
+    {
+      name: "Toolbox",
+      link: "/toolbox",
+      type: "page",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+      type: "page",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+      type: "page",
+    },
+    {
+      name: "Socials",
+      type: "divider",
+    },
+    {
+      name: "Github",
+      link: "https://github.com/parkersm1th",
+      type: "link",
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/parkersm1th",
+      type: "link",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/parkersm1th/",
+      type: "link",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/parkersm1th/",
+      type: "link",
+    },
+  ];
+
+  const [pages, setPages] = useState(pageDefaults);
 
   React.useEffect(() => {
     function keyListener(e) {
@@ -25,6 +92,17 @@ export default function NavDialog() {
       }
       if (e.keyCode === 75 && e.metaKey) {
         handleShow();
+      }
+      if (e.keyCode >= 49 && e.keyCode <= 57 && e.metaKey && e.altKey) {
+        if (pageDefaults[e.keyCode - 49].type == "page") {
+          navigate(pageDefaults[e.keyCode - 49].link);
+        } else {
+          console.log(pageDefaults[e.keyCode - 49].link);
+          window.open(pageDefaults[e.keyCode - 48].link, "_blank");
+        }
+      }
+      if (e.keyCode === 74 && e.metaKey) {
+        navigate("/");
       }
     }
 
@@ -39,6 +117,21 @@ export default function NavDialog() {
     </Tooltip>
   );
 
+  const onInputSearch = (input) => {
+    let inputVal = input.target.value.toLowerCase();
+    console.log(inputVal);
+    if (inputVal == "" || inputVal == null) {
+      setPages(pageDefaults);
+    } else {
+      setPages(
+        pageDefaults.filter(
+          (page) =>
+            page.name.toLowerCase().includes(inputVal) || page.type == "divider"
+        )
+      );
+    }
+  };
+
   return (
     <>
       <OverlayTrigger
@@ -52,69 +145,21 @@ export default function NavDialog() {
       </OverlayTrigger>
 
       <Modal show={show} onHide={handleClose}>
-        <input placeholder="Search Pages (Ex. About Me)" class="searchInput" />
+        <input
+          autoFocus
+          onChange={onInputSearch}
+          placeholder="Search Pages (Ex. About Me)"
+          class="searchInput"
+        />
         <ul className="navItems">
-          <li className="typeDivider">
-            <p>Pages</p>
-          </li>
-          <NavItem type="page" name="Home" link="/" handleClose={handleClose} />
-          <NavItem
-            type="page"
-            name="About"
-            link="/about"
-            handleClose={handleClose}
-          />
-          <NavItem
-            type="page"
-            name="Repositories"
-            link="/repos"
-            handleClose={handleClose}
-          />
-          <NavItem
-            type="page"
-            name="Toolbox"
-            link="/tools"
-            handleClose={handleClose}
-          />
-          <NavItem
-            type="page"
-            name="Projects"
-            link="/projects"
-            handleClose={handleClose}
-          />
-          <NavItem
-            type="page"
-            name="Contact"
-            link="/contact"
-            handleClose={handleClose}
-          />
-          <li className="typeDivider">
-            <p>Socials</p>
-          </li>
-          <NavItem
-            type="link"
-            name="Github"
-            link="https://github.com/parkersm1th"
-            handleClose={null}
-          />
-          <NavItem
-            type="link"
-            name="Twitter"
-            link="https://twitter.com/parkersm1th"
-            handleClose={null}
-          />
-          <NavItem
-            type="link"
-            name="Linkedin"
-            link="https://www.linkedin.com/in/parkersm1th/"
-            handleClose={null}
-          />
-          <NavItem
-            type="link"
-            name="Instagram"
-            link="https://www.instagram.com/parkersm1th/"
-            handleClose={null}
-          />
+          {pages.map((page) => (
+            <NavItem
+              type={page.type}
+              name={page.name}
+              link={page.link}
+              handleClose={handleClose}
+            />
+          ))}
         </ul>
       </Modal>
     </>
