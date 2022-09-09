@@ -288,7 +288,7 @@ export function Home() {
           <h1 className="homeSeparator">EDUCATION</h1>
           <Row className="homeJumbo">
             <HomeItem
-              link="https://colostate.edu"
+              link="https://compsci.colostate.edu/"
               title="CS Student"
               desc="Colorado State University"
               time="2022-"

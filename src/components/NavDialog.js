@@ -93,6 +93,12 @@ export default function NavDialog() {
       if (e.keyCode === 75 && e.metaKey) {
         handleShow();
       }
+      if (show && e.keyCode === 13) {
+        if (pages[1].type === "page") {
+          navigate(pages[1].link);
+          handleClose();
+        }
+      }
       if (e.keyCode >= 49 && e.keyCode <= 57 && e.metaKey && e.altKey) {
         if (pageDefaults[e.keyCode - 49].type == "page") {
           navigate(pageDefaults[e.keyCode - 49].link);
@@ -119,7 +125,7 @@ export default function NavDialog() {
 
   const onInputSearch = (input) => {
     let inputVal = input.target.value.toLowerCase();
-    console.log(inputVal);
+    //console.log(inputVal);
     if (inputVal == "" || inputVal == null) {
       setPages(pageDefaults);
     } else {
