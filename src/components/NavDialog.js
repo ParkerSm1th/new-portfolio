@@ -126,7 +126,7 @@ export default function NavDialog() {
   const onInputSearch = (input) => {
     let inputVal = input.target.value.toLowerCase();
     //console.log(inputVal);
-    if (inputVal == "" || inputVal == null) {
+    if (inputVal === "" || inputVal == null) {
       setPages(pageDefaults);
     } else {
       setPages(
