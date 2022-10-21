@@ -12,13 +12,14 @@ export function Repos() {
   const fakeList = [1, 2, 3, 4, 6, 7, 8];
 
   const getRepoInfo = () => {
+    window.scrollTo(0, 0);
     axios
       .get("https://api.github.com/users/parkersm1th/repos")
       .then((res) => {
         setRepos(
           res.data
             .filter((repo) => repo.fork === false && repo.desc !== null)
-            .sort((a, b) => b?.size - a?.size)
+            .sort((a, b) => b?.stargazers_count - a?.stargazers_count)
         );
         setLoading(false);
       })

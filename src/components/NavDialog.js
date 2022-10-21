@@ -24,42 +24,61 @@ export default function NavDialog() {
 
   const pageDefaults = [
     {
-      name: "Pages",
+      name: "Socials",
       type: "divider",
     },
     {
-      name: "Home",
-      link: "/",
+      name: "Github",
+      link: "https://github.com/parkersm1th",
+      type: "link",
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/parkersm1th",
+      type: "link",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/parkersm1th/",
+      type: "link",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/parkersm1th/",
+      type: "link",
+    },
+  ];
+
+  const pageSearches = [
+    {
+      name: "Warzone Ranks",
+      link: "./wzranks",
       type: "page",
     },
     {
-      name: "About",
-      link: "/about",
+      name: "Groupiz",
+      link: "./grpiz",
+      type: "page",
+    },
+    {
+      name: "KeyFM",
+      link: "./keyfm",
+      type: "page",
+    },
+    {
+      name: "Contact Me",
+      link: "./contact",
+      type: "page",
+    },
+    {
+      name: "About Me",
+      link: "./about",
       type: "page",
     },
     {
       name: "Repositories",
-      link: "/repos",
+      link: "./repos",
       type: "page",
-    },
-    {
-      name: "Toolbox",
-      link: "/toolbox",
-      type: "page",
-    },
-    {
-      name: "Projects",
-      link: "/projects",
-      type: "page",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-      type: "page",
-    },
-    {
-      name: "Socials",
-      type: "divider",
     },
     {
       name: "Github",
@@ -94,8 +113,8 @@ export default function NavDialog() {
         handleShow();
       }
       if (show && e.keyCode === 13) {
-        if (pages[1].type === "page") {
-          navigate(pages[1].link);
+        if (pages[0].type === "page") {
+          navigate(pages[0].link);
           handleClose();
         }
       }
@@ -130,7 +149,7 @@ export default function NavDialog() {
       setPages(pageDefaults);
     } else {
       setPages(
-        pageDefaults.filter(
+        pageSearches.filter(
           (page) =>
             page.name.toLowerCase().includes(inputVal) || page.type == "divider"
         )

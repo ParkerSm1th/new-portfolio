@@ -14,6 +14,8 @@ import { Repos } from "./pages/Repos";
 import { Toolbox } from "./pages/Toolbox";
 import { Contact } from "./pages/Contact";
 import { WZRanks } from "./pages/projects/wzranks/main";
+import { Groupiz } from "./pages/projects/grpiz/main";
+import { KeyFM } from "./pages/projects/keyfm/main";
 
 function App() {
   const location = useLocation();
@@ -30,7 +32,9 @@ function App() {
               <Route path="repos" element={<Repos />} />
               <Route path="tools" element={<Toolbox />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="projects/wzranks" element={<WZRanks />} />
+              <Route path="wzranks" element={<WZRanks />} />
+              <Route path="grpiz" element={<Groupiz />} />
+              <Route path="keyfm" element={<KeyFM />} />
             </Routes>
           </CSSTransition>
         </TransitionGroup>

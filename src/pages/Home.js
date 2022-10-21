@@ -6,6 +6,7 @@ import axios from "axios";
 
 // Components
 import HomeItem from "../components/HomeItem";
+import Techs from "../components/HomeComponents/Tech/Techs";
 
 // Images
 import Sticker from "../assets/images/Sticker.png";
@@ -88,7 +89,7 @@ export function Home() {
           <h1>Parker Smith</h1>
           <h2>
             <a
-              href="https://www.w3schools.com/whatis/whatis_fullstack_js.asp?utm_source=eggsy.xyz"
+              href="https://www.w3schools.com/whatis/whatis_fullstack_js.asp?utm_source=parkersmith.io"
               target="_blank"
               rel="noreferrer"
               className="skillLink"
@@ -174,26 +175,18 @@ export function Home() {
         </Col>
         <Col xs={12} md={6}>
           <HomeItem
-            link="/repos"
-            title="Repositories"
-            desc="Feel free to take a look at some of my work and public repositories."
-            type="page"
-          />
-        </Col>
-        <Col xs={12} md={6}>
-          <HomeItem
-            link="/tools"
-            title="Toolbox"
-            desc="Want to know what I use to build my apps and projects?"
-            type="page"
-          />
-        </Col>
-        <Col xs={12} md={6}>
-          <HomeItem
             link="/contact"
             title="Contact"
             desc="Ready to start a project? Just have a question? Let's chat."
             type="page"
+          />
+        </Col>
+        <Col xs={12} md={6}>
+          <HomeItem
+            link="https://parkersmith.io/ParkerSmithResume.pdf"
+            title="Resume"
+            desc="Interested in learning everything about me in 1 page? Check out my resume."
+            type="pagelink"
           />
         </Col>
       </Row>
@@ -201,7 +194,7 @@ export function Home() {
       <Row className="homeJumbo">
         <Col xs={12} md={6}>
           <HomeItem
-            link="/projects/wzranks"
+            link="/wzranks"
             title="WarzoneRanks"
             desc="One of my biggest projects reaching over 50k active users."
             img={WZRanks}
@@ -210,7 +203,7 @@ export function Home() {
         </Col>
         <Col xs={12} md={6}>
           <HomeItem
-            link="/projects/grpiz"
+            link="/grpiz"
             title="Groupiz"
             desc={[
               "A ",
@@ -230,7 +223,7 @@ export function Home() {
         </Col>
         <Col xs={12} md={6}>
           <HomeItem
-            link="/projects/keyfm"
+            link="/keyfm"
             title="KeyFM"
             desc={[
               "A ",
@@ -248,7 +241,19 @@ export function Home() {
             type="portfolio"
           />
         </Col>
-        <Col xs={12} md={6} className=""></Col>
+        <Col xs={12} md={6} className="">
+          <HomeItem
+            link="/repos"
+            title="Repositories"
+            desc="Feel free to check out all of my other work and public projects."
+            type="page"
+          />
+        </Col>
+      </Row>
+
+      <h1 className="homeSeparator">TECHNOLOGIES I USE</h1>
+      <Row className="homeJumbo">
+        <Techs></Techs>
       </Row>
       <Row>
         <Col xs={12} md={6}>

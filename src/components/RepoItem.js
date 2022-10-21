@@ -10,6 +10,12 @@ export default function RepoItem(props) {
     case "Java":
       languageIcon = "fa-brands fa-java";
       break;
+    case "PHP":
+      languageIcon = "fa-brands fa-php";
+      break;
+    case "HTML":
+      languageIcon = "fa-brands fa-html5";
+      break;
     case null:
       languageIcon = "fa-brands fa-markdown";
       break;

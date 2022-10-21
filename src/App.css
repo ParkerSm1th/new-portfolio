@@ -1,3 +1,13 @@
+/*
+
+Global Browser Support
+
+*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   background-color: #ef1d64;
 }
@@ -353,6 +363,20 @@ a.skillLink:hover {
   font-family: "SF UI Text Medium";
 }
 
+.aboutMe .separator {
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color: #404040;
+  font-size: 22px;
+  font-family: "SF UI Text Medium";
+}
+
+.aboutMe p {
+  color: rgb(140 137 137);
+  font-family: "SF UI Text Regular";
+  padding-left: 5px;
+}
+
 .homeItem {
   padding: 18px;
   margin: 3px auto;
@@ -414,7 +438,72 @@ a.skillLink:hover {
   padding-bottom: 0px;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.techTitle {
+  margin-top: 10px;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+}
+
+.techItem {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  background: rgba(82, 82, 82, 0.1);
+}
+
+.techItem:hover {
+  background: rgba(82, 82, 82, 0.12);
+}
+
+.techItemIcon {
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.techItemIcon i {
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  vertical-align: middle;
+  line-height: 32px;
+}
+
+.techItemText {
+  display: inline-block;
+  vertical-align: middle;
+  width: 60%;
+}
+
+.techItemText h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 17px;
+  padding-top: 9px;
+  color: #646464;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
 .pageTitle {
+  margin-top: 30px;
+}
+
+.techItem .pageTitle {
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -444,6 +533,22 @@ a.skillLink:hover {
   font-size: 17px;
   color: #ffffff78;
   font-family: "SF UI Text Regular";
+}
+
+.contactItemText {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+}
+
+.contactIcon {
+  height: 32px;
+  font-size: 28px;
+  width: 32px;
+  vertical-align: middle;
+  color: rgb(86 84 84);
+  float: right;
+  margin-top: 9px;
 }
 
 .fade-enter {
@@ -521,6 +626,14 @@ a.skillLink:hover {
   color: #efd81d;
 }
 
+.fa-html5 {
+  color: #e34c26;
+}
+
+.fa-php {
+  color: rgb(96, 96, 240);
+}
+
 .fa-java {
   color: #dc3545;
 }
@@ -540,4 +653,13 @@ a.skillLink:hover {
   color: transparent !important;
   font-size: 11px !important;
   margin-top: 4px;
+}
+
+.titleLinks a {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.titleLinks {
+  color: #646464;
 }
