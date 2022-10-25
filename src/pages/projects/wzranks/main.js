@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import WZRanks1 from "../../../assets/images/WZRanks-1.png";
-import WZRanks2 from "../../../assets/images/WZRanks-2.png";
+import React, { useEffect } from "react";
 
 export function WZRanks() {
   useEffect(() => {
@@ -11,14 +9,16 @@ export function WZRanks() {
     <div>
       <div className="pageTitle">
         <h1>WZ Ranks</h1>
-        <a
-          href="https://github.com/WarzoneRanks"
-          target="_blank"
-          rel="noreferrer"
-          className="skillLink"
-        >
-          Github Repo
-        </a>
+        <p className="titleLinks">
+          <a
+            href="https://github.com/WarzoneRanks"
+            target="_blank"
+            rel="noreferrer"
+            className="skillLink"
+          >
+            Github Repo
+          </a>
+        </p>
       </div>
       <div className="pageContent">
         <h2>
