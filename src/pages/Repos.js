@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Tooltip, OverlayTrigger } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components
 import RepoItem from "../components/RepoItem";
