@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import TechItem from "./TechItem";
 
@@ -6,6 +6,7 @@ export default function Techs(props) {
   // Python, Java, JavaScript, TypeScript, HTML, CSS, PHP, C#, AngularJS, REST,
   // GitHub, JIRA
   // VSCode, Eclipse, Intellij, Figma
+  let [developmentLength, setDevelopmentLength] = useState(5);
   let technologies = [
     {
       name: "React.js",
@@ -85,6 +86,20 @@ export default function Techs(props) {
       type: "development",
     },
     {
+      name: "SQL",
+      icon: "fas fa-database",
+      link: "https://en.wikipedia.org/wiki/SQL",
+      color: "255, 209, 102, 0.125",
+      type: "development",
+    },
+    {
+      name: "MongoDB",
+      icon: "fas fa-database",
+      link: "https://www.mongodb.com/",
+      color: "67, 181, 129, 0.125",
+      type: "development",
+    },
+    {
       name: "VSCode",
       icon: "fak fa-vs",
       link: "https://code.visualstudio.com/",
@@ -126,11 +141,38 @@ export default function Techs(props) {
       <div className="techSection">
         <h1 className="techTitle homeSeparator">Development</h1>
         <Row>
-          {technologies.map((tech) => {
+          {technologies.slice(0, developmentLength).map((tech) => {
             if (tech.type === "development") {
               return <TechItem tech={tech} />;
             }
           })}
+          {developmentLength < technologies.length ? (
+            <Col xs={12} md={4} lg={3}>
+              <div
+                onClick={() => {
+                  setDevelopmentLength(technologies.length);
+                }}
+                className="techItem truncate moreIcon"
+              >
+                <div className="techItemIcon">
+                  <i class="fa-sharp fa-solid fa-grid-2-plus"></i>
+                </div>
+              </div>
+            </Col>
+          ) : (
+            <Col xs={12} md={4} lg={3}>
+              <div
+                onClick={() => {
+                  setDevelopmentLength(5);
+                }}
+                className="techItem truncate moreIcon"
+              >
+                <div className="techItemIcon">
+                  <i class="fa-solid fa-minus"></i>
+                </div>
+              </div>
+            </Col>
+          )}
         </Row>
       </div>
       <div className="techSection">

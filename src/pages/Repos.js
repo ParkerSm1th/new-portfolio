@@ -34,7 +34,18 @@ export function Repos() {
     <div>
       <div className="pageTitle">
         <h1>Repositories</h1>
-        <h2>My public projects on GitHub.</h2>
+        <h2>
+          My public projects on{" "}
+          <a
+            href="https://github.com/parkersm1th"
+            target="_blank"
+            rel="noreferrer"
+            className="skillLink"
+          >
+            GitHub
+          </a>
+          .
+        </h2>
       </div>
       <div>
         {loading ? (

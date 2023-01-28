@@ -100,6 +100,11 @@ export default function NavDialog() {
       link: "https://www.instagram.com/parkersm1th/",
       type: "link",
     },
+    {
+      name: "Resume",
+      link: "https://parkersmith.io/ParkerSmithResume.pdf",
+      type: "link",
+    },
   ];
 
   const [pages, setPages] = useState(pageDefaults);
@@ -159,15 +164,43 @@ export default function NavDialog() {
 
   return (
     <>
-      <OverlayTrigger
-        placement="bottom"
-        delay={{ show: 250, hide: 400 }}
-        overlay={renderTooltip({ text: "⌘ + K" })}
-      >
-        <div className="navButton" onClick={handleShow}>
-          <FontAwesomeIcon icon={light("bars")} />
-        </div>
-      </OverlayTrigger>
+      <div className="navSmall">
+        <OverlayTrigger
+          placement="bottom"
+          delay={{ show: 250, hide: 400 }}
+          overlay={renderTooltip({ text: "⌘ + K" })}
+        >
+          <div className="navButton" onClick={handleShow}>
+            <FontAwesomeIcon icon={light("bars")} />
+          </div>
+        </OverlayTrigger>
+      </div>
+      <div className="navBig">
+        <ul>
+          <li>
+            <a
+              href="https://github.com/parkersm1th"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="smallNavButton">
+                <i className="fab fa-github"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderTooltip({ text: "⌘ + K" })}
+            >
+              <div className="smallNavButton" onClick={handleShow}>
+                <i class="fa-solid fa-bars"></i>
+              </div>
+            </OverlayTrigger>
+          </li>
+        </ul>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <input

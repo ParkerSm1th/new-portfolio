@@ -20,7 +20,7 @@ export function Nav() {
         <Spacer />
         <Box w="70px" h="60"></Box>
         <Spacer />
-        <Box w="70px" h="60">
+        <Box w="fit-content" h="60">
           <NavDialog />
         </Box>
       </Flex>

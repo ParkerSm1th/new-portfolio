@@ -29,6 +29,14 @@ p {
   margin: auto;
 }
 
+.navSmall {
+  display: none;
+}
+
+.navBig {
+  display: block;
+}
+
 @media (min-width: 640px) {
   .mainContainer {
     width: 75%;
@@ -53,6 +61,12 @@ p {
 
   .stickerDiv {
     float: unset !important;
+  }
+  .navSmall {
+    display: block;
+  }
+  .navBig {
+    display: none;
   }
 }
 
@@ -124,6 +138,36 @@ p {
 
 .navButton:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+
+.background-grey {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.smallNavButton {
+  padding: 8px 14px;
+  /* background-color: rgba(255, 255, 255, 0.08); */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  width: fit-content;
+  float: left;
+}
+
+.navBig ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navBig ul li {
+  list-style-type: none;
+  padding-right: 0px;
+  float: left;
 }
 
 .navBar {
@@ -497,6 +541,15 @@ a.skillLink:hover {
   color: #646464;
   text-overflow: clip;
   white-space: nowrap;
+}
+
+.moreIcon {
+  width: fit-content;
+  color: #646464;
+}
+
+.moreIcon .techItemIcon {
+  margin-right: 0px;
 }
 
 .pageTitle {

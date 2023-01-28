@@ -244,8 +244,19 @@ export function Home() {
         <Col xs={12} md={6} className="">
           <HomeItem
             link="/repos"
-            title="Repositories"
-            desc="Feel free to check out all of my other work and public projects."
+            title={["more projects ", <i className="fas fa-arrow-right"></i>]}
+            desc={[
+              "Feel free to check out all of my other work and public projects, from ",
+              <a
+                href="https://github.com/parkersm1th"
+                target="_blank"
+                rel="noreferrer"
+                className="skillLink"
+              >
+                GitHub
+              </a>,
+              ".",
+            ]}
             type="page"
           />
         </Col>
@@ -260,6 +271,13 @@ export function Home() {
           <h1 className="homeSeparator">EXPERIENCE</h1>
           <Row className="homeJumbo">
             <HomeItem
+              link="https://beamapp.ai"
+              title="Beam"
+              desc="Software Engineer"
+              time="2022-"
+              type="exp"
+            />
+            <HomeItem
               link="https://parkersmith.io"
               title="Parker Smith"
               desc="Freelance Developer"
@@ -270,13 +288,13 @@ export function Home() {
               link="https://mcparks.us"
               title="MCParks"
               desc="Java Developer"
-              time="2022-"
+              time="2021-2022"
               type="exp"
             />
             <HomeItem
               link="https://palaceinteractive.net"
               title="Palace Interactive"
-              desc="Lead Developer"
+              desc="Software Engineer"
               time="2018-2021"
               type="exp"
             />
